@@ -2,7 +2,9 @@
   position: fixed;
   left: 11px;
   top: 100px;
-  z-index: 15;
+  z-index: 20;
+  will-change: transform;
+  transition: transform 0.8 cubic-bezier(0.65, 0.04, 0.34, 1);
 
   .MenuButton__button {
     cursor: pointer;
@@ -10,6 +12,8 @@
     height: 48px;
     border: none;
     background: 0 0;
+    will-change: transform;
+    transition: transform 0.8 cubic-bezier(0.65, 0.04, 0.34, 1);
 
     span {
       &::after,
@@ -22,7 +26,6 @@
         left: 50%;
         top: 50%;
         display: block;
-
         will-change: transform;
         transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
       }
@@ -32,6 +35,22 @@
       }
       &:before {
         transform: translate(5px, -50%) scale(0.7) rotate(0deg);
+      }
+    }
+  }
+  &.toggle {
+    span {
+      &::before,
+      &::after {
+        background-color: white;
+      }
+      &::before {
+        transform: translate(-50%, -50%) rotate(315deg);
+        background-color: white;
+      }
+      &::after {
+        transform: translate(-50%, -50%) rotate(45deg);
+        background-color: white;
       }
     }
   }
