@@ -1,0 +1,41 @@
+.MenuContent {
+  .MenuContent__InsideMenu {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 15;
+    background-color: black;
+    color: white;
+    will-change: transform;
+    transition: transform 1s cubic-bezier(1, 0, 0, 1);
+    transform: translateX(-100%);
+
+    .MenuContent__InsideMenuContainer {
+      position: relative;
+      left: 220px;
+      top: 100px;
+      overflow: hidden;
+      width: calc(90vw - 260px);
+    }
+    .MenuContent__InternalLinks {
+      li {
+        margin-bottom: 20px;
+        a {
+          font-size: clamp(32px, 4vw, 52px);
+          line-height: 1.1em;
+          transition: transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        }
+        &:hover {
+          cursor: pointer;
+
+          a {
+            font-weight: 800;
+          }
+        }
+      }
+    }
+    . &.toggle {
+      transform: translateX(0);
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import React from "react"
+import Menu from "../Menu/Menu"
 import "./Header.scss"
 
 function Header() {
@@ -6,6 +7,7 @@ function Header() {
     <>
       <div className="header">
         <p className="header__description">Digital Experience Design style</p>
+        <Menu />
       </div>
     </>
   )
