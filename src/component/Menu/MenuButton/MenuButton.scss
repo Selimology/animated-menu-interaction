@@ -4,7 +4,7 @@
   top: 100px;
   z-index: 20;
   will-change: transform;
-  transition: transform 0.8 cubic-bezier(0.65, 0.04, 0.34, 1);
+  transition: transform 0.8s cubic-bezier(0.65, 0.04, 0.34, 1);
 
   .MenuButton__button {
     cursor: pointer;
@@ -13,7 +13,7 @@
     border: none;
     background: 0 0;
     will-change: transform;
-    transition: transform 0.8 cubic-bezier(0.65, 0.04, 0.34, 1);
+    transition: transform 0.8s cubic-bezier(0.65, 0.04, 0.355, 1);
 
     span {
       &::after,
@@ -30,15 +30,21 @@
         transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
       }
 
-      &:after {
-        transform: translate(-5px, -50%) scale(0.7) rotate(180deg);
-      }
       &:before {
-        transform: translate(5px, -50%) scale(0.7) rotate(0deg);
+        transform: translate(-5px, -50%) scaleY(0.7) rotate(180deg);
+      }
+      &:after {
+        transform: translate(5px, -50%) scaleY(0.7) rotate(0);
       }
     }
   }
   &.toggle {
+    transform: translateX(80px);
+    transition-delay: 0.2s;
+
+    .MenuButton__button {
+      transform: rotate(90deg);
+    }
     span {
       &::before,
       &::after {
@@ -46,11 +52,9 @@
       }
       &::before {
         transform: translate(-50%, -50%) rotate(315deg);
-        background-color: white;
       }
       &::after {
         transform: translate(-50%, -50%) rotate(45deg);
-        background-color: white;
       }
     }
   }

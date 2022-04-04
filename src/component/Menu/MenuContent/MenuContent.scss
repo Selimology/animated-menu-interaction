@@ -21,6 +21,7 @@
       li {
         margin-bottom: 20px;
         a {
+          transform: translate(-100%);
           font-size: clamp(32px, 4vw, 52px);
           line-height: 1.1em;
           transition: transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -56,6 +57,42 @@
 
     &.toggle {
       transform: translateX(0);
+
+      .MenuContent__InternalLinks {
+        li {
+          a {
+            transform: translate(0);
+            transition-duration: 0.8s;
+            transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+          }
+        }
+
+        @for $i from 0 through 4 {
+          li:nth-child(#{$i + 1}n) {
+            a {
+              transition-delay: #{$i/10 + 0.8}s;
+            }
+          }
+        }
+      }
+      .MenuContent__ExternalLinks {
+        li {
+          a {
+            opacity: 1;
+            transform: translate(0);
+            transition-duration: 1s;
+            transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+          }
+        }
+
+        @for $i from 0 through 4 {
+          li:nth-child(#{$i + 1}n) {
+            a {
+              transition-delay: #{$i/10 + 1.1}s;
+            }
+          }
+        }
+      }
     }
   }
 }
